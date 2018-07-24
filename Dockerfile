@@ -148,6 +148,7 @@ RUN pip install --no-cache-dir \
 
 VOLUME /jobs
 VOLUME /caffe
+VOLUME /data
 
 ENV DIGITS_JOBS_DIR=/jobs
 ENV DIGITS_LOGFILE_FILENAME=/jobs/digits.log
