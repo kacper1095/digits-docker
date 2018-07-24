@@ -11,7 +11,7 @@ Project was created to use Docker and have possiblity to modify `caffe` at the s
 1. Enter downloaded repo
 2. Run script `download_caffe.sh`
 3. Run `docker build -t <your-image-name> .`
-4. Run `docker run --runtime=nvidia -d -p 5000:5000 <your-image-name>`
+4. Run `docker run --runtime=nvidia -d -p 5000:5000 6006:6006 -v data:/data  caffe:/caffe digits:/digits <your-image-name>`
 
 Full description available at this [link](https://github.com/NVIDIA/nvidia-docker/wiki/DIGITS).
 

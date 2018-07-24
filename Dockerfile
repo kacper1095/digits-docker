@@ -137,7 +137,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         torch7-nv=0.9.99-1+cuda8.0 && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install https://github.com/NVIDIA/DIGITS/archive/v6.0.1.tar.gz
+COPY digits digits
+RUN pip install -e digits
 
 RUN pip install --no-cache-dir \
         pyopenssl ndg-httpsclient pyasn1 \
@@ -149,6 +150,7 @@ RUN pip install --no-cache-dir \
 VOLUME /jobs
 VOLUME /caffe
 VOLUME /data
+VOLUME /digits
 
 ENV DIGITS_JOBS_DIR=/jobs
 ENV DIGITS_LOGFILE_FILENAME=/jobs/digits.log
